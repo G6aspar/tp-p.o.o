@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Search</title>
+    <title>Buscar Animal</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Find Animal Information</h1>
+        <h1>Encuentra la información del animal que deseas</h1>
         <form action="/search" method="POST">
-            <input type="text" name="animal_name" placeholder="Enter animal name" required>
-            <button type="submit">Search</button>
+            <input type="text" name="animal_name" placeholder="Introduce el nombre del animal" required>
+            <button type="submit">Buscar</button>
         </form>
 
         {% if error %}
