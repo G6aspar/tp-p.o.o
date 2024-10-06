@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Find Animal Information</h1>
+        <input type="text" id="animalName" placeholder="Enter animal name">
+        <button onclick="fetchAnimal()">Search</button>
+
+        <div id="animalInfo"></div>
+        <div id="error"></div>
+    </div>
+
+    <script>
+        function fetchAnimal() {
+            const name = document.getElementById('animalName').value;
+            fetch(`/animal/${name}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('error').textContent = data.error;
+                    } else {
+                        document.getElementById('animalInfo').innerHTML = `
+                            <h2>${data[0].name}</h2>
+                            <p>Type: ${data[0].taxonomy.class}</p>
+                            <p>Habitat: ${data[0].locations}</p>
+                            <p>Lifespan: ${data[0].lifespan}</p>
+                        `;
+                        document.getElementById('error').textContent = '';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('error').textContent = 'Error fetching animal data';
+                });
+        }
+    </script>
+</body>
+</html>
