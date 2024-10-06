@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, request
 from controller import AnimalController
 
 app = Flask(__name__)
@@ -8,13 +8,15 @@ animal_controller = AnimalController()
 def index():
     return render_template('index.html')
 
-@app.route('/animal/<name>', methods=['GET'])
-def get_animal(name):
+@app.route('/search', methods=['POST'])
+def search_animal():
+    name = request.form.get('animal_name')
     try:
-        response = animal_controller.get_animal_info(name)
-        return jsonify(response), 200
+        animal_data = animal_controller.get_animal_info(name)
+        return render_template('animal_info.html', animal=animal_data[0])
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return render_template('index.html', error=str(e))
 
 if __name__ == '__main__':
     app.run(debug=True)
+

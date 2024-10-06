@@ -9,10 +9,9 @@ class Handler:
 class AnimalNameValidator(Handler):
     def handle(self, name):
         if not name.isalpha():
-            raise ValueError(f"Invalid animal name: '{name}'.")
+            raise ValueError(f"Nombre de animal no válido: '{name}'.")
         super().handle(name)
 
 class AnimalDataFormatter(Handler):
     def handle(self, data):
-        # You could add any extra processing here, for now we pass it through
         super().handle(data)

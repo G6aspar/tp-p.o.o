@@ -13,11 +13,10 @@ class AnimalService:
         return cls._instance
 
     def fetch_animal_info(self, name):
-        # Chain of Responsibility pattern to validate and process
         self.chain.handle(name)
         
         data = self.animal_dao.get_animal_data(name)
         if not data:
-            raise AnimalNotFoundException(f"Animal '{name}' not found.")
+            raise AnimalNotFoundException(f"Animal '{name}' no encontrado.")
         
         return data
