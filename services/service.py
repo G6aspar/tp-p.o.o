@@ -1,6 +1,6 @@
-from dao import AnimalDao
-from chain_of_responsibility import AnimalNameValidator, AnimalDataFormatter
-from exceptions import AnimalNotFoundException
+from dao.animal_dao import AnimalDao
+from utils.chain_of_responsibility import AnimalNameValidator, AnimalDataFormatter
+from exceptions.custom_exceptions import AnimalNotFoundException
 
 class AnimalService:
     _instance = None

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from controller import AnimalController
+from controllers.controller import AnimalController
 
 app = Flask(__name__)
 animal_controller = AnimalController()

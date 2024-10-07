@@ -1,4 +1,4 @@
-from service import AnimalService
+from services.service import AnimalService
 
 class AnimalController:
     _instance = None
