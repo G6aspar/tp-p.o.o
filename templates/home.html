@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <h1>Bienvenido a la búsqueda de animales</h1>
+        <p>Haga clic en el botón de abajo para buscar información sobre animales.</p>
+        <a href="{{ url_for('index') }}">
+            <button class="btn-search">Ir al Buscador</button>
+        </a>
+    </div>
+</body>
+</html>
