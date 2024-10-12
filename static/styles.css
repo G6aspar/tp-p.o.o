@@ -2,8 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #504030;
+    color: #ffffff;
 }
 
 .container {
@@ -11,26 +11,25 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #3c5733;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 50px;
+
 }
 
-/* Encabezados */
 h1 {
     font-size: 2em;
-    color: #2c3e50;
+    color: #ffffff;
     text-align: center;
 }
 
 h2 {
     font-size: 1.5em;
-    color: #34495e;
+    color: #ffffff;
     margin-top: 20px;
 }
 
-/* Formularios */
 form {
     display: flex;
     justify-content: center;
@@ -60,20 +59,18 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Listas */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
 li {
-    background-color: #ecf0f1;
+    background-color: #5c814d;
     margin: 5px 0;
     padding: 10px;
     border-radius: 4px;
 }
 
-/* Enlaces */
 a {
     text-align: center;
     display: block;
@@ -86,7 +83,6 @@ a:hover {
     color: #2980b9;
 }
 
-/* Responsividad */
 @media (max-width: 600px) {
     .container {
         width: 95%;
@@ -103,4 +99,35 @@ a:hover {
     h2 {
         font-size: 1.3em;
     }
+}
+
+/* Estilos para la página de inicio */
+.home-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+.btn-search {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.btn-search:hover {
+    background-color: #0056b3;
 }

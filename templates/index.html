@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Animal</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
     <div class="container">
@@ -13,7 +13,6 @@
             <input type="text" name="animal_name" placeholder="Introduce el nombre del animal" required>
             <button type="submit">Buscar</button>
         </form>
-
         {% if error %}
         <p style="color: red;">{{ error }}</p>
         {% endif %}

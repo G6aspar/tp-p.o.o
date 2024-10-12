@@ -5,6 +5,10 @@ app = Flask(__name__)
 animal_controller = AnimalController()
 
 @app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/buscar')
 def index():
     return render_template('index.html')
 
