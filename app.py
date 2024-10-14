@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
-from controllers.controller import AnimalController
+from controllers.controller import AnimalController, CatController, DogController
 
 app = Flask(__name__)
+
 animal_controller = AnimalController()
+cat_controller = CatController()
+dog_controller = DogController()
 
 @app.route('/')
 def home():
@@ -18,6 +21,22 @@ def search_animal():
     try:
         animal_data = animal_controller.get_animal_info(name)
         return render_template('animal_info.html', animal=animal_data[0])
+    except Exception as e:
+        return render_template('index.html', error=str(e))
+
+@app.route('/cats')
+def get_cats():
+    try:
+        cat_data = cat_controller.get_animal_info("")
+        return render_template('animal_info.html', animal=cat_data)
+    except Exception as e:
+        return render_template('index.html', error=str(e))
+
+@app.route('/dogs')
+def get_dogs():
+    try:
+        dog_data = dog_controller.get_animal_info("")
+        return render_template('animal_info.html', animal=dog_data)
     except Exception as e:
         return render_template('index.html', error=str(e))
 

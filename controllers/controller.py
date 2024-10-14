@@ -1,13 +1,18 @@
-from services.service import AnimalService
+from services.service import AnimalService, CatService, DogService
+from dao.animal_dao import AnimalDao
 
 class AnimalController:
-    _instance = None
-
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super(AnimalController, cls).__new__(cls)
-            cls._instance.animal_service = AnimalService()
-        return cls._instance
+    def __init__(self):
+        self.animal_service = AnimalService(dao=AnimalDao())
 
     def get_animal_info(self, name):
         return self.animal_service.fetch_animal_info(name)
+
+class CatController(AnimalController):
+    def __init__(self):
+        self.animal_service = CatService()
+
+class DogController(AnimalController):
+    def __init__(self):
+        self.animal_service = DogService()
+

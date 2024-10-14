@@ -15,3 +15,10 @@ class AnimalDao:
         if response.status_code == 200:
             return response.json()
         return None
+
+class CatDao(AnimalDao):
+    API_URL = 'https://api.api-ninjas.com/v1/cats'
+
+class DogDao(AnimalDao):
+    API_URL = 'https://api.api-ninjas.com/v1/dogs'
+
