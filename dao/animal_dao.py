@@ -10,7 +10,7 @@ class AnimalDao:
         return cls._instance
 
     def get_animal_data(self, name):
-        headers = {'X-Api-Key': 'uuoL9Wva45E7StRCCKsZYw==3bedacFV5Ov0xk5n'}
+        headers = {'X-Api-Key': 'qG3u4immV6Zg9pJdyM5LKT4VyJGLCoQ5YqwWyTEx'}
         response = requests.get(self.API_URL.format(name), headers=headers)
         if response.status_code == 200:
             return response.json()
