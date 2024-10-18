@@ -15,8 +15,28 @@ class AnimalService:
     def fetch_animal_info(self, name):
         self.chain.handle(name)
         
-        data = self.animal_dao.get_animal_data(name)
-        if not data:
+        raw_data = self.animal_dao.get_animal_data(name)
+        if not raw_data:
             raise AnimalNotFoundException(f"Animal '{name}' no encontrado.")
         
-        return data
+        formatted_data = self.format_animal_data(raw_data)
+        return formatted_data
+
+    def format_animal_data(self, raw_data):
+        formatted_data = []
+        for animal in raw_data:
+            formatted_data.append({
+            'name': animal.get('name'),
+            'common_name': animal.get('characteristics', {}).get('common_name'),  # Asegúrate de que este campo exista
+            'taxonomy': {
+                'kingdom': animal.get('taxonomy', {}).get('kingdom'),
+                'phylum': animal.get('taxonomy', {}).get('phylum'),
+                'class': animal.get('taxonomy', {}).get('class'),
+                'order': animal.get('taxonomy', {}).get('order'),
+                'family': animal.get('taxonomy', {}).get('family'),
+                'genus': animal.get('taxonomy', {}).get('genus'),
+                'scientific_name': animal.get('taxonomy', {}).get('scientific_name'),
+            }
+        })
+        return formatted_data
+
