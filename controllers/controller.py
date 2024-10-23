@@ -1,4 +1,5 @@
 from services.service import AnimalService
+from exceptions.custom_exceptions import AnimalNotFoundException
 
 class AnimalController:
     _instance = None
@@ -10,4 +11,9 @@ class AnimalController:
         return cls._instance
 
     def get_animal_info(self, name):
-        return self.animal_service.fetch_animal_info(name)
+        try:
+            animal_info = self.animal_service.fetch_animal_info(name)
+            return animal_info
+        except AnimalNotFoundException as e:
+            raise e  
+

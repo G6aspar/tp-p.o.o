@@ -8,53 +8,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>{{ animal['name'] }} - {{ animal['characteristics']['common_name'] }}</h1>
+        <h1>{{ animal['name'] }} - {{ animal['common_name'] }}</h1>
 
-        <h2>Taxonomy</h2>
+        <h2>Taxonomía</h2>
         <ul>
-            <li><strong>Kingdom:</strong> {{ animal['taxonomy']['kingdom'] }}</li>
-            <li><strong>Phylum:</strong> {{ animal['taxonomy']['phylum'] }}</li>
-            <li><strong>Class:</strong> {{ animal['taxonomy']['class'] }}</li>
-            <li><strong>Order:</strong> {{ animal['taxonomy']['order'] }}</li>
-            <li><strong>Family:</strong> {{ animal['taxonomy']['family'] }}</li>
-            <li><strong>Genus:</strong> {{ animal['taxonomy']['genus'] }}</li>
-            <li><strong>Scientific Name:</strong> {{ animal['taxonomy']['scientific_name'] }}</li>
-        </ul>
-
-        <h2>Locations</h2>
-        <ul>
-            {% for location in animal['locations'] %}
-            <li>{{ location }}</li>
-            {% endfor %}
-        </ul>
-
-        <h2>Characteristics</h2>
-        <ul>
-            <li><strong>Prey:</strong> {{ animal['characteristics']['prey'] }}</li>
-            <li><strong>Name of Young:</strong> {{ animal['characteristics']['name_of_young'] }}</li>
-            <li><strong>Group Behavior:</strong> {{ animal['characteristics']['group_behavior'] }}</li>
-            <li><strong>Estimated Population Size:</strong> {{ animal['characteristics']['estimated_population_size'] }}</li>
-            <li><strong>Biggest Threat:</strong> {{ animal['characteristics']['biggest_threat'] }}</li>
-            <li><strong>Most Distinctive Feature:</strong> {{ animal['characteristics']['most_distinctive_feature'] }}</li>
-            <li><strong>Gestation Period:</strong> {{ animal['characteristics']['gestation_period'] }}</li>
-            <li><strong>Habitat:</strong> {{ animal['characteristics']['habitat'] }}</li>
-            <li><strong>Diet:</strong> {{ animal['characteristics']['diet'] }}</li>
-            <li><strong>Average Litter Size:</strong> {{ animal['characteristics']['average_litter_size'] }}</li>
-            <li><strong>Lifestyle:</strong> {{ animal['characteristics']['lifestyle'] }}</li>
-            <li><strong>Common Name:</strong> {{ animal['characteristics']['common_name'] }}</li>
-            <li><strong>Number of Species:</strong> {{ animal['characteristics']['number_of_species'] }}</li>
-            <li><strong>Location:</strong> {{ animal['characteristics']['location'] }}</li>
-            <li><strong>Slogan:</strong> {{ animal['characteristics']['slogan'] }}</li>
-            <li><strong>Color:</strong> {{ animal['characteristics']['color'] }}</li>
-            <li><strong>Skin Type:</strong> {{ animal['characteristics']['skin_type'] }}</li>
-            <li><strong>Top Speed:</strong> {{ animal['characteristics']['top_speed'] }}</li>
-            <li><strong>Lifespan:</strong> {{ animal['characteristics']['lifespan'] }}</li>
-            <li><strong>Weight:</strong> {{ animal['characteristics']['weight'] }}</li>
-            <li><strong>Height:</strong> {{ animal['characteristics']['height'] }}</li>
-            <li><strong>Age of Sexual Maturity:</strong> {{ animal['characteristics']['age_of_sexual_maturity'] }}</li>
-            <li><strong>Age of Weaning:</strong> {{ animal['characteristics']['age_of_weaning'] }}</li>
-        </ul>
-
+            <li><strong>Reino:</strong> {{ animal['taxonomy']['kingdom'] }}</li>
+            <li><strong>Filo:</strong> {{ animal['taxonomy']['phylum'] }}</li>
+            <li><strong>Clase:</strong> {{ animal['taxonomy']['class'] }}</li>
+            <li><strong>Orden:</strong> {{ animal['taxonomy']['order'] }}</li>
+            <li><strong>Familia:</strong> {{ animal['taxonomy']['family'] }}</li>
+            <li><strong>Género:</strong> {{ animal['taxonomy']['genus'] }}</li>
+            <li><strong>Nombre científico:</strong> {{ animal['taxonomy']['scientific_name'] }}</li>
+        </ul>      
         <a href="{{ url_for('index') }}">
             <button class="btn-search">Ir al Buscador</button>
         </a>
