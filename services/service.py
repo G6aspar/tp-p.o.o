@@ -27,7 +27,6 @@ class AnimalService:
         for animal in raw_data:
             formatted_data.append({
             'name': animal.get('name'),
-            'common_name': animal.get('characteristics', {}).get('common_name'),  # Asegúrate de que este campo exista
             'taxonomy': {
                 'kingdom': animal.get('taxonomy', {}).get('kingdom'),
                 'phylum': animal.get('taxonomy', {}).get('phylum'),

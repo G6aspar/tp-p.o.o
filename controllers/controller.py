@@ -12,10 +12,8 @@ class AnimalController:
 
     def get_animal_info(self, name):
         try:
-            # Intenta obtener la información del animal
             animal_info = self.animal_service.fetch_animal_info(name)
             return animal_info
         except AnimalNotFoundException as e:
-            # Maneja la excepción en caso de que el animal no sea encontrado
-            raise e  # Puedes lanzar la excepción o manejarla como desees
+            raise e  
 
