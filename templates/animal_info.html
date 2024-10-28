@@ -12,13 +12,13 @@
 
         <h2>Taxonomía</h2>
         <ul>
-            <li><strong>Reino:</strong> {{ animal['taxonomy']['kingdom'] }}</li>
-            <li><strong>Filo:</strong> {{ animal['taxonomy']['phylum'] }}</li>
-            <li><strong>Clase:</strong> {{ animal['taxonomy']['class'] }}</li>
-            <li><strong>Orden:</strong> {{ animal['taxonomy']['order'] }}</li>
-            <li><strong>Familia:</strong> {{ animal['taxonomy']['family'] }}</li>
-            <li><strong>Género:</strong> {{ animal['taxonomy']['genus'] }}</li>
-            <li><strong>Nombre científico:</strong> {{ animal['taxonomy']['scientific_name'] }}</li>
+            <li><strong>Reino:</strong> {{ animal.kingdom }}</li>
+            <li><strong>Filo:</strong> {{ animal.phylum }}</li>
+            <li><strong>Clase:</strong> {{ animal.animal_class }}</li>
+            <li><strong>Orden:</strong> {{ animal.order }}</li>
+            <li><strong>Familia:</strong> {{ animal.family }}</li>
+            <li><strong>Género:</strong> {{ animal.genus }}</li>
+            <li><strong>Nombre científico:</strong> {{ animal.scientific_name }}</li>
         </ul>      
         <a href="{{ url_for('index') }}">
             <button class="btn-search">Ir al Buscador</button>

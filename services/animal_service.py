@@ -20,7 +20,7 @@ class AnimalService:
         if not raw_data:
             raise AnimalNotFoundException(f"Animal '{name}' no encontrado.")
         
-        formatted_data = AnimalMapper.format_animal_data(raw_data)
-        return formatted_data
+        animals = AnimalMapper.format_animal_data(raw_data)
+        return animals
 
 
