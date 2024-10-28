@@ -1,4 +1,4 @@
-from services.service import AnimalService
+from services.animal_service import AnimalService
 from exceptions.custom_exceptions import AnimalNotFoundException
 
 class AnimalController:
