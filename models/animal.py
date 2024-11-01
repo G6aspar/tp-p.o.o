@@ -8,6 +8,3 @@ class Animal:
         self.family = family
         self.genus = genus
         self.scientific_name = scientific_name
-    
-    def __repr__(self):
-        return f"<Animal(name={self.name}, scientific_name={self.scientific_name})>"
